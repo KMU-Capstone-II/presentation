@@ -1,11 +1,11 @@
 \documentclass{beamer}
 \usepackage{kotex}
 \usepackage{amsmath}
-
+\usepackage{url}
 
 \title{중간발표}
 \author{장준민 \and 장지훈 \and 이예담}
-\institute{Kookmin Univ. EE}
+\institute{KMU EE}
 \date{\today}
 \usetheme{Madrid}
 
@@ -13,14 +13,14 @@
 \frame{\titlepage}
 
 \begin{frame}
-\frametitle{Constraints}
+\frametitle{Constraints we kept}
     \begin{block}{About Vehicle}
         \setlength{\abovedisplayskip}{0pt}
         \setlength{\belowdisplayskip}{0pt}
         \begin{align*}
             (0.0 \leq VehicleSpeed \leq 5.5) \; &\wedge \\
             (InitialSpeed = 5.5) \; &\wedge \\
-            (Camera \vee Lidar \vee Radar\vee Ultrasonic\vee ObjectCameara\vee World Viewer) \; &\wedge \\
+            UseAllowedSensor \; &\wedge \\
         \end{align*}
     \end{block}
     \begin{block}{About Task}
@@ -40,18 +40,22 @@
 \begin{itemize}
     \item Matlab function 사용 안함 (for performance)
     \begin{itemize}
-        \item Matlab function 블럭이 시뮬레이션 동안 계속 interpreted 되는지, 중간에 한번 compile 되고 재사용 하는지(JIT)는 잘 모르겠음.
+        \item Matlab function 블럭이 시뮬레이션 동안 계속 interpreted 되는지
+        \item 중간에 한번 compile 되고 재사용 하는지(JIT)는 잘 모르겠음
     \end{itemize}
     \item LKAS Module은 그대로 사용
     \begin{itemize}
-        \item Black box 취급
+        \item as black box
     \end{itemize}
     \item 기능 별로 Module 화 시킴 (for readability)
-    \item 요구사항대로, Sensor data 만을 활용해서 의사결정을 함.
+    \item 요구사항대로, Sensor data 만을 활용해서 차량을 제어함
 \end{itemize}
 \end{frame}
 
 \begin{frame}
-    
+\frametitle{Demo Video}
+\begin{center}
+    \href{https://www.youtube.com/watch?v=jrDs9xtC62U}{Demo Video (Click)}
+\end{center}
 \end{frame}
 \end{document}
